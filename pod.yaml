@@ -1,0 +1,16 @@
+#stand-alone Pod creation
+# This YAML file defines a Kubernetes Pod named "myyml-pod-01" in the "custom-ns" namespace.
+
+apiVersion: v1
+kind: Pod
+metadata:
+  name: myyml-pod-01
+  namespace: custom-ns
+  labels:
+    app: myyml-app
+spec:
+  containers:
+  - name: myyml-container
+    image: nginx:latest
+    ports:
+    - containerPort: 80

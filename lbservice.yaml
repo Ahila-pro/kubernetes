@@ -1,0 +1,13 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: lb-service
+spec:
+  selector:
+    #app: nginx # This selector should match the labels of the pods you want to expose
+    app:  custom-app
+  ports:
+    - port: 8765 # port on the service - LoadBalancer (to access the service from outside)
+      targetPort: 80  # port on the container which is in deployment.yaml
+  type: LoadBalancer
+
